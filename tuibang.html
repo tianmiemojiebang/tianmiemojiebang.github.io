@@ -1,14 +1,11 @@
 <script src="base64.js" type="text/javascript"></script>
 <script>
 var b = new Base64();
-urlinfo=window.location.href; //获取当前页面的url
-len=urlinfo.length;//获取url的长度
-offset=urlinfo.indexOf("?");//设置参数字符串开始的位置
-newsidinfo=urlinfo.substr(offset+1,len)//取出参数字符串 这里会获得类似“id=1”这样的字符串
-newsids=newsidinfo.split("=");//对获得的参数字符串按照“=”进行分割
-newsid=newsids[1];//得到参数值
-newsname=newsids[0];//得到参数名字
-var obj = eval(JSON.parse(b.decode(newsname.replace("!","="))));
+urlinfo=window.location.href;
+len=urlinfo.length;
+offset=urlinfo.indexOf("?");
+newsidinfo=urlinfo.substr(offset+1,len)
+var obj = eval(JSON.parse(b.decode(newsidinfo)));
 alert("这里是 "+obj.name+" 同志的反摩羯帮宣言页面\n创建自己的反摩羯帮页面请访问tianmiemojiebang.github.io");
-document.writeln("<title>"+obj.name+"的反摩羯帮页面</title><h1>天灭摩羯帮！</h1><p>"+obj.name+":<br>&#9;我承诺一生远离摩羯帮，并主动打击摩羯帮分子。</p><p>&#9;"+obj.smd+"<br>"+obj.name+"<br></p><p>2015年8月</p><a href='tianmiemojiebang.github.io'>创建自己的反摩羯帮页面</a>");
+document.writeln("<title>"+obj.name+"的反摩羯帮页面</title><h1>天灭摩羯帮！</h1><p>"+obj.name+":<br>&nbsp;&nbsp;&nbsp;我承诺一生远离摩羯帮，并主动打击摩羯帮邪恶分子。</p><p>&nbsp;&nbsp;&nbsp;"+obj.smd+"<br></p><p>2015年8月</p><a href='http://tianmiemojiebang.github.io'>创建自己的反摩羯帮页面</a>");
 </script>
